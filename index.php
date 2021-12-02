@@ -31,9 +31,9 @@
         
       </ul>
       <!-- LogIn  -->
-          <a class="nav-link" href="#">Log In</a>
+          <a class="nav-link" href="http://localhost/project-ghor-bari/login.php">Log In</a>
         <!-- Register -->
-          <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link " href="http://localhost/project-ghor-bari/registration.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Register
           </a>
     </div>
