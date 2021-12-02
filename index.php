@@ -12,12 +12,12 @@
 
 
 <body>
-   <?php
+<?php
    include("nevigation.php")
     ?> 
-
 <!-- Carousel -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
 
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
@@ -29,6 +29,7 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
+    
       <img src="images/home_page/home-1.jpg" alt="Los Angeles" class="d-block" style="width:100% ">
       <div class="carousel-caption">
         <h3>Los Angeles</h3>
