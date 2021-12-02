@@ -26,7 +26,6 @@
                 <div class="form-input"> <i class="fa fa-user"></i> <input type="text" class="form-control" placeholder="User name"> </div>
                 <div class="form-input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="password"> </div>
                 <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree all the statements </label> </div> <button class="btn btn-primary mt-4 signup">Start coding now</button>
-                <div class="text-center mt-3"> <span>Or continue with these social profile</span> </div>
                 <div class="d-flex justify-content-center mt-4"> <span class="social"><i class="fa fa-google"></i></span> <span class="social"><i class="fa fa-facebook"></i></span> <span class="social"><i class="fa fa-twitter"></i></span> <span class="social"><i class="fa fa-linkedin"></i></span> </div>
                 <div class="text-center mt-4"> <span>Already a member?</span> <a href="#" class="text-decoration-none">Login</a> </div>
             </div>
