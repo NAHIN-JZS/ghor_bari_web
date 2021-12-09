@@ -6,42 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="reg.css"> -->
+    
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="style\logIn\login.css">
 
 </head>
 <body>
+
+
+
+
+<div class="container">
 <?php
    include("nevigation.php");
    require 'con2database.php';
     ?> 
-<form action="" method = "post">
-<div class="container mt-5 mb-5">
-    <div class="row d-flex align-items-center justify-content-center">
-        <div class="col-md-6">
-            <div class="card px-5 py-5"> <span class="circle"><i class="fa fa-check"></i></span>
-                <h3 class = "mt-3">Register Now</h3>
-                <h5 class="mt-3">Join over 25 million <br> learners from around the globe</h5> <small class="mt-2 text-muted">Master the languages of the web: HTML, CSS and javascript. This path will prepare you to build basic websites and then build interactive web apps</small>
-                <div class="form-input"> <i class="fa fa-envelope"></i> <input type="email" class="form-control" placeholder="Email address" name="email"> </div>
-                <div class="form-input"> <i class="fa fa-user"></i> <input type="text" class="form-control" placeholder="User name"> </div>
-                <div class="form-input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="password"> </div>
-                <!-- <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked> <label class="form-check-label" for="flexCheckChecked"> I agree all the statements </label> </div> <button class="btn btn-primary mt-4 signup">Start coding now</button> -->
-                <div class="form-input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="Phone Number"> </div>
-                <div class="form-input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="Address"> </div>
-                <input type="submit" value="registration" name="registration" class="btn float-right login_btn">
-            
-                <!-- <div class="d-flex justify-content-center mt-4"> <span class="social"><i class="fa fa-google"></i></span> <span class="social"><i class="fa fa-facebook"></i></span> <span class="social"><i class="fa fa-twitter"></i></span> <span class="social"><i class="fa fa-linkedin"></i></span> </div> -->
-                <div class="text-center mt-4"> <span>Already a member?</span> <a href="http://localhost/project-ghor-bari/login.php" class="text-decoration-none">Login</a> </div>
-            </div>
-        </div>
-    </div>
+	<div class="d-flex justify-content-center h-100">
+    
+		<div class="card">
+			<div class="card-header">
+				<h3>Registration</h3>
+				
+			</div>
+			<div class="card-body">
+				<form action="" method ="post">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input type="email" class="form-control" placeholder="email" name='email'>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="User Name" name='user_name'>
+					</div>
+
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password" name='password'>
+					</div>
+
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-phone"></i></span>
+						</div>
+						<input type="number" class="form-control" placeholder="Phone Number" name='phone_number'>
+					</div>
+
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-address-card"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Address" name='address'>
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" value="Login" name="login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="http://localhost/project-ghor-bari/login.php" class="text-decoration-none">Login</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-</form>
 
-
-     <!-- user_insertion_sql = "INSERT into user (name ,phone, parmanent_address, email, password) values " -->
     
 
 
