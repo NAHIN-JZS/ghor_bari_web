@@ -24,10 +24,10 @@
 
 <div class="container">
 <?php
-   include("nevigation.php");
-   require 'con2database.php';
-    ?> 
-	<div class="d-flex justify-content-center h-100">
+        include("nevigation.php");
+        require 'con2database.php';
+            ?> 
+	<div class="d-flex justify-content-center">
     
 		<div class="card">
 			<div class="card-header">
@@ -72,20 +72,44 @@
 					</div>
 					
 					<div class="form-group">
-						<input type="submit" value="Login" name="login" class="btn float-right login_btn">
+						    <input type="submit"  name="sign_up" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="http://localhost/project-ghor-bari/login.php" class="text-decoration-none">Login</a>
+					Have an account?<a href="http://localhost/project-ghor-bari/login.php" class="text-decoration-none">Login</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php
 
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+$email = $_POST['email'];
+$name = $_POST['user_name'];
+$password = $_POST['password'];
+$phone_number = $_POST['phone_number'];
+$address = $_POST['address'];
+
+
+$sql_enter_new_user = "INSERT INTO `user` (`name`, `phone`,`permanent_address`, `email`, `password`) VALUES ('$name', '$phone_number', '$address', '$email',  '$password');";
+
+//$connect->query($sql_enter_new_user);
+
+if (mysqli_query($connect, $sql_enter_new_user)) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql_enter_new_user . "<br>" . mysqli_error($connect);
+  }
+
+
+}
+
+?>
     
 
 

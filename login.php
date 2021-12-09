@@ -16,40 +16,38 @@
 
 <?php
 	require 'con2database.php';
-	
+	$login_error = 0;
 	if(isset($_POST['login'])) {
 
 		// Get data from FORM
-		$email = validate($_POST['email']);
-		$password = validate($_POST['password']);
+		$email = $_POST['email'];
+		$password = $_POST['password'];
 
-		try {
-			$stmt = $connect->prepare('SELECT * FROM users WHERE email = :email');
-			$stmt->execute(array(
-				':username' => $username,
-				':email' => $email
-				));
-			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+		
+		$sql_login_find = "SELECT * from `user` WHERE `email` = '$email';";
+		$result = mysqli_query($connect, $sql_login_find);
+		
 
-			if($data == false){
-				$errMsg = "User $username not found.";
-			}
-			else {
-				if(md5($password) == $data['password']) {
-					$_SESSION['id'] = $data['id'];
-					$_SESSION['username'] = $data['username'];
-					$_SESSION['fullname'] = $data['fullname'];
-					$_SESSION['role'] = $data['role'];
-					header('Location: dashboard.php');
-					exit;
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				if($row['password'] == $password){
+					header('location:index.php');
+					
 				}
-				else
-					$errMsg = 'Password not match.';
+				else{
+					//echo "Incorrect Password";
+					$login_error = 1; 
+				}
 			}
+		} 
+		else {
+			//echo "Don't have account? Please Sign up";
+			$login_error = 2;
 		}
-		catch(PDOException $e) {
-			$errMsg = $e->getMessage();
-		}
+
+		mysqli_close($connect);
+		
+		
 	}
 ?>
 
@@ -92,7 +90,18 @@
 				</form>
 			</div>
 			<div class="card-footer">
+					<p style="color:red; text-align:center;">
+						<?php
+							if($login_error == 1){
+								echo "Incorrect Password";
+							}
+							elseif($login_error ==2) {
+								echo "Not Registered Email";
+							}
+						?>
+					</p>
 				<div class="d-flex justify-content-center links">
+				
 					Don't have an account?<a href="http://localhost/project-ghor-bari/registration.php">Sign Up</a>
 				</div>
 			</div>

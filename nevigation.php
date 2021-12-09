@@ -2,7 +2,7 @@
  <nav class="navbar navbar-expand-lg navbar-light ">
   <div class="container-fluid">
     <!-- logo -->
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="index.php">
       <img src="nahin.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
     </a>
 
