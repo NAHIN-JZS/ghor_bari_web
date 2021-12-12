@@ -31,6 +31,13 @@
 		if (mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				if($row['password'] == $password){
+					$_SESSION['u_id'] = $row['id'];
+					$_SESSION['u_name'] = $row['name'];
+					$_SESSION['u_phone'] = $row['phone'];
+					$_SESSION['u_email'] = $row['email'];
+
+					//echo $_SESSION['u_name'];
+
 					header('location:index.php');
 					
 				}

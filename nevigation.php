@@ -1,3 +1,13 @@
+ <?php
+  session_start();
+  ?>
+
+
+
+
+
+
+
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-light ">
   <div class="container-fluid">
@@ -6,20 +16,46 @@
       <img src="nahin.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fa fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        </li>
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+        <!-- <li class="nav-item"> -->
+          <a class="nav-link active" aria-current="page" href="index.php" >Home</a>
+        <!-- </li> -->
         
-      </ul>
-      <!-- LogIn  -->
-          <a class="nav-link" href="http://localhost/project-ghor-bari/login.php">Log In</a>
-        <!-- Register -->
-          <a class="nav-link " href="http://localhost/project-ghor-bari/registration.php">Register</a>
+      <!-- </ul> -->
+      <?php
+      //echo $_SESSION['u_name'];
+      if(isset($_SESSION['u_name'])){
+        // LogIn
+        //  echo '<li class="nav-item">';
+         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/profile.php">'.$_SESSION['u_name'].'</a>';
+        //  echo '</li>';
+         //<!-- Register -->
+          // echo '<li class="nav-item">';
+          echo '<a class="nav-link " href="http://localhost/project-ghor-bari/logout.php">Log Out</a>';
+          // echo '</li>';
+          
+        //<!-- Search -->
+          // echo '<li class="nav-item">';
+          echo '<a class="nav-link " href="http://localhost/project-ghor-bari/search.php">Search</a>';
+          // echo '</li>';
+        }
+      else{
+        //<!-- LogIn  -->
+        //  echo '<li class="nav-item">';
+         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/login.php">Log In</a>';
+        //  echo '</li>';
+         //<!-- Register -->
+        //  echo '<li class="nav-item">';
+         echo '<a class="nav-link " href="http://localhost/project-ghor-bari/registration.php">Register</a>';
+        //  echo '</li>';
+        }
+      ?>
+      
     </div>
   </div>
 </nav>
