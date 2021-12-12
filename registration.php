@@ -61,7 +61,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-phone"></i></span>
 						</div>
-						<input type="number" class="form-control" placeholder="Phone Number" name='phone_number'>
+						<input type="number" class="form-control" pattern="^(\d{10})$" placeholder="Phone Number" name='phone_number'>
 					</div>
 
                     <div class="input-group form-group">

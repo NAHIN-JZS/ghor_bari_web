@@ -26,7 +26,7 @@
       if(isset($_SESSION['u_name'])){
         // LogIn
         //  echo '<li class="nav-item">';
-         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/profile.php">'.$_SESSION['u_name'].'</a>';
+         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/add_ghor.php">'.$_SESSION['u_name'].'</a>';
         //  echo '</li>';
          //<!-- Register -->
           // echo '<li class="nav-item">';
