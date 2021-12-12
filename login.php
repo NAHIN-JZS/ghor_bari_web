@@ -15,7 +15,9 @@
 
 
 <?php
+
 	require 'con2database.php';
+	include("nevigation.php");
 	$login_error = 0;
 	if(isset($_POST['login'])) {
 
@@ -63,9 +65,7 @@
 <body>
 
 <div class="container">
-<?php
-   include("nevigation.php")
-    ?> 
+
 	<div class="d-flex justify-content-center h-100">
     
 		<div class="card">

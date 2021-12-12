@@ -13,7 +13,8 @@
 
 <body>
 <?php
-   include("nevigation.php")
+   include("nevigation.php");
+   
     ?> 
 <!-- Carousel -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
