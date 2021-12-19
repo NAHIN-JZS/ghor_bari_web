@@ -26,7 +26,7 @@
 			}
 		?>
   		<h2 class="text-center">Register Room</h2>
-  		<form action="" method="post">
+  		<form action="" enctype="multipart/form-data" method="post">
 		  	 <div class="row">
 		  	 	<div class="col-md-4">
 			  	  <div class="form-group">
@@ -79,6 +79,8 @@
 			  <div class="form-group">
 			    <label for="description">Image</label>
 			    <input type="file" name="image" id="image">
+				
+
 			  </div>
 			  </div>
 			  </div>
@@ -106,6 +108,11 @@
 		$rent_fare = $_POST['rent_fare'];
 		$additional_info = $_POST['additional_info'];
 		$image = $_POST['image'];
+
+
+		$tmpFile = $_FILES['image'];
+		$newFile = 'C:/xampp/htdocs/project-ghor-bari/images/houses/'.$_FILES['image'];
+		$result = move_uploaded_file($tmpFile, $newFile);
 
 		$sql_enter_new_ghor = "INSERT INTO `house` (`u_id`, `house_no`,`total_room`, `address`, `city`, `cost`, `image`, `additional_info`) VALUES ('$u_id', '$house_no', '$total_room', '$address',  '$city', '$rent_fare', '$image', '$additional_info');";
 

@@ -1,3 +1,5 @@
+
+
 <?php
   
   include("nevigation.php");
@@ -82,7 +84,7 @@
                               //echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
                               if ($value['image'] !== 'uploads/') {
                                 # code...
-                                echo '<img src="app/'.$value['image'].'" width="100">';
+                                echo '<img src="images/houses/'.$value['image'].'" width="100">';
                               }
 
                           echo '</div>

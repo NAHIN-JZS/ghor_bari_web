@@ -3,7 +3,7 @@
   ?>
   
  <!-- Navigation -->
- <nav class="navbar navbar-expand-lg navbar-light ">
+ <nav class="navbar navbar-expand-lg navbar-dark" style='background-color:#212529;'>
   <div class="container-fluid">
     <!-- logo -->
   <a class="navbar-brand" href="index.php">
@@ -14,7 +14,7 @@
     Menu
     <i class="fa fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse text-uppercase"  id="navbarSupportedContent">
       <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
         <!-- <li class="nav-item"> -->
           <a class="nav-link active" aria-current="page" href="index.php" >Home</a>
@@ -26,7 +26,7 @@
       if(isset($_SESSION['u_name'])){
         // LogIn
         //  echo '<li class="nav-item">';
-         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/add_ghor.php">'.$_SESSION['u_name'].'</a>';
+         echo '<a class="nav-link" href="http://localhost/project-ghor-bari/profile.php">'.$_SESSION['u_name'].'</a>';
         //  echo '</li>';
          //<!-- Register -->
           // echo '<li class="nav-item">';
