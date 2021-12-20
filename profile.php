@@ -67,17 +67,16 @@
 			<!-- <div class="row"> -->
 				<div class="col-md-12 ">
 					<h1  style='background-color:#FFFFFF;' >Dash board</h1>
-					<div class="row">						
+					<div class="row">								
+            <div class="col-md-3">
+              <a href="owner_registered_ghor.php">
+                <div class="alert alert-warning" role="alert">
+                  <?php echo '<b>Total Registered Rooms: <span class="badge badge-pill badge-success" style="background-color:#212529";>'.$total_auth_user_rent.'</span></b>'; ?>
+                </div>
+              </a>
+          </div>
+							
 						
-						<?php 
-							
-								echo '<div class="col-md-3">';
-								echo '<a href="../app/list.php"><div class="alert alert-warning" role="alert">';
-								echo '<b>Total Registered Rooms: <span class="badge badge-pill badge-success" style="background-color:#212529";>'.$total_auth_user_rent.'</span></b>';
-								echo '</div></a>';
-								echo '</div>';
-							
-						?>
 
 					</div>
                     <div class="row">

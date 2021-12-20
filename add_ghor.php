@@ -77,7 +77,7 @@
 			   	
 				<div class="col-md-4">
 			  <div class="form-group">
-			    <label for="description">Image</label>
+			    <label for="image">Image</label>
 			    <input type="file" name="image" id="image">
 				
 
