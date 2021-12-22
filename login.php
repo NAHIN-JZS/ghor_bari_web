@@ -37,6 +37,8 @@
 					$_SESSION['u_name'] = $row['name'];
 					$_SESSION['u_phone'] = $row['phone'];
 					$_SESSION['u_email'] = $row['email'];
+					$_SESSION['u_password'] = $row['password'];
+					$_SESSION['u_address'] = $row['permanent_address'];
 
 					//echo $_SESSION['u_name'];
 

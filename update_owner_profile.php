@@ -24,23 +24,24 @@
         require 'con2database.php';
             ?>
 
+
 <?php
 
-if (isset($_POST['sign_up'])){
+if (isset($_POST['update'])){
 
+$uid = $_SESSION['u_id'];
 $email = $_POST['email'];
 $name = $_POST['user_name'];
 $password = $_POST['password'];
 $phone_number = $_POST['phone_number'];
 $address = $_POST['address'];
 
-
-$sql_enter_new_user = "INSERT INTO `user` (`name`, `phone`,`permanent_address`, `email`, `password`) VALUES ('$name', '$phone_number', '$address', '$email',  '$password');";
+$sql_update_user = "UPDATE `user` SET `name`= '$name', `phone`='$phone_number',`permanent_address`='$address', `email`='$email', `password`='$password' WHERE `user`.`id` = '$uid';";
 
 //$connect->query($sql_enter_new_user);
 
-if (mysqli_query($connect, $sql_enter_new_user)) {
-	echo "Done!!!";
+if (mysqli_query($connect, $sql_update_user)) {
+	
 	$sql_login_find = "SELECT * from `user` WHERE `email` = '$email';";
 	$result = mysqli_query($connect, $sql_login_find);
 	foreach($result as $key => $value){
@@ -52,7 +53,8 @@ if (mysqli_query($connect, $sql_enter_new_user)) {
 	$_SESSION['u_email'] = $email;
 	$_SESSION['u_address'] = $address;
 	$_SESSION['u_password'] = $password;
-    header('location:index.php'); 
+    //echo "Done!!!";
+    header('location:profile.php'); 
   } else {
     echo "Error: " . $sql_enter_new_user . "<br>" . mysqli_error($connect);
   }
@@ -66,7 +68,7 @@ if (mysqli_query($connect, $sql_enter_new_user)) {
     
 		<div class="card">
 			<div class="card-header">
-				<h3>Registration</h3>
+				<h3>Update Your Profile</h3>
 				
 			</div>
 			<div class="card-body">
@@ -75,47 +77,43 @@ if (mysqli_query($connect, $sql_enter_new_user)) {
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</div>
-						<input type="email" class="form-control" placeholder="email" name='email'>
+						<input type="email" class="form-control" value =<?php echo $_SESSION['u_email']; ?> name='email'>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="User Name" name='user_name'>
+						<input type="text" class="form-control" value =<?php echo $_SESSION['u_name']; ?> name='user_name'>
 					</div>
 
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password" name='password'>
+						<input type="text" class="form-control" value =<?php echo $_SESSION['u_password']; ?> name='password'>
 					</div>
 
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-phone"></i></span>
 						</div>
-						<input type="number" class="form-control" pattern="^(\d{10})$" placeholder="Phone Number" name='phone_number'>
+						<input type="number" class="form-control" pattern="^(\d{10})$" value =<?php echo $_SESSION['u_phone']; ?> name='phone_number'>
 					</div>
 
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-address-card"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="Address" name='address'>
+						<input type="text" class="form-control" value =<?php echo $_SESSION['u_address']; ?> name='address'>
 					</div>
 					
 					<div class="form-group">
-						    <input type="submit"  name="sign_up" class="btn float-right login_btn">
+						    <input type="submit"  name="update" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Have an account?<a href="http://localhost/project-ghor-bari/login.php" class="text-decoration-none">Login</a>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </div>

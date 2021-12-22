@@ -45,9 +45,13 @@
             }
                 foreach ($data as $key => $value) {           
                   echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
-                        <div class="card-block">';
-                          // echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
-                         echo   '<div class="row">
+                        <div class="card-block" >';
+                        
+                           echo '<a class="btn btn-warning float-right" href="update_ghor_info.php?id='.$value['h_id'].'">Edit</a>';
+                            echo '&nbsp';
+                              echo '<a class="btn btn-warning float-right" href="delete_ghor.php?id='.$value['h_id'].'" style = "background-color: red;">Delete</a>';
+                           
+                           echo   '<div class="row">
                             <div class="col-4">
                             <h4 class="text-center">Owner Details</h4>';
                               echo '<p><b>Owner Name: </b>'.$value['name'].'</p>';

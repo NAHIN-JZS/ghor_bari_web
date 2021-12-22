@@ -107,12 +107,12 @@
 		$address = $_POST['address'];
 		$rent_fare = $_POST['rent_fare'];
 		$additional_info = $_POST['additional_info'];
-		$image = $_POST['image'];
+		$image = "";
 
 
-		$tmpFile = $_FILES['image'];
-		$newFile = 'C:/xampp/htdocs/project-ghor-bari/images/houses/'.$_FILES['image'];
-		$result = move_uploaded_file($tmpFile, $newFile);
+		//$tmpFile = $_FILES['image'];
+		//$newFile = 'C:/xampp/htdocs/project-ghor-bari/images/houses/'.$_FILES['image'];
+		//$result = move_uploaded_file($tmpFile, $newFile);
 
 		$sql_enter_new_ghor = "INSERT INTO `house` (`u_id`, `house_no`,`total_room`, `address`, `city`, `cost`, `image`, `additional_info`) VALUES ('$u_id', '$house_no', '$total_room', '$address',  '$city', '$rent_fare', '$image', '$additional_info');";
 
