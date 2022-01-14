@@ -10,17 +10,17 @@
   if(isset($_POST['search'])) {
     // Get data from FORM
     $location = $_POST['location'];
-  
-    $sql_search_ghor = "SELECT * from `house` INNER JOIN `user` ON `house`.`u_id` = `user`.`id` WHERE `house`.`city` = '$location'; ";
+    $h_type = $_POST['h_type'];
+    $sql_search_ghor = "SELECT * from `house` INNER JOIN `user` ON `house`.`u_id` = `user`.`id` WHERE `house`.`city` = '$location' AND `house`.`h_type` = '$h_type'; ";
     $data = mysqli_query($connect, $sql_search_ghor);
 
     if(isset($errMsg)){
       echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
     }
     if(mysqli_num_rows($data) > 0){
-      echo "<h2 class='text-center'>List of Apartment Details</h2>";
+      echo "<h2 class='text-center'>List of ".$h_type." in ".$location."</h2>";
     }else{
-      echo "<h2 class='text-center' style='color:red;'>Try Some other keywords</h2>";
+      echo "<h2 class='text-center' style='color:red;'>Sorry no ".$h_type." is  available in ".$location."</h2>";
     }
     
   }
@@ -34,7 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="style\search.css">
 </head>
 
 
@@ -58,7 +58,8 @@
                   <div class="form-group">
                     <!-- <input class="form-control" id="location" type="text" name="location" placeholder="Location" required data-validation-required-message="Please enter location."> -->
                     
-                    <select id="location" name="location" size="1">
+                    <select class = "form-control form-control-sm" id="location" name="location" size="1">
+                        <option value="---">Please select location for rent purposes</option>
                         <option value="Bagerhat">Bagerhat</option>
                         <option value="Bandarban">Bandarban</option>
                         <option value="Barguna">Barguna</option>
@@ -125,6 +126,13 @@
                         
                         
                     </select>
+                    <br>
+                    <select class = "form-control form-control-sm" id="h_type" name="h_type" size="1">
+                        <option value="---">Please select house type</option>
+                        <option value="house">House</option>
+                        <option value="office">Office</option>
+                        <option value="market_place">market_place</option>
+                    </select>
 
                     <p class="help-block text-danger"></p>
                   </div>
@@ -148,13 +156,12 @@
                             <h4 class="text-center">Owner Details</h4>';
                               echo '<p><b>Owner Name: </b>'.$value['name'].'</p>';
                               echo '<p><b>Mobile Number: </b>'.$value['phone'].'</p>';
-                              //echo '<p><b>Alternate Number: </b>'.$value['alternat_mobile'].'</p>';
                               echo '<p><b>Email: </b>'.$value['email'].'</p>';
                               //echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
-                              if ($value['image'] !== 'uploads/') {
+                              //if ($value['image'] !== 'uploads/') {
                                 # code...
-                                echo '<img src="images/houses/'.$value['image'].'" width="100">';
-                              }
+                              //  echo '<img src="images/houses/'.$value['image'].'" width="100">';
+                              //}
 
                           echo '</div>
                             <div class="col-5">
