@@ -19,3 +19,8 @@
     border-radius: 15px;
 
 }
+
+.button_edit_and_update{
+    float: right;
+    margin-left: .5%;
+}

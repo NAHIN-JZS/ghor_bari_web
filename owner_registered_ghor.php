@@ -48,9 +48,9 @@
                   echo '<div class="card card-inverse card-info mb-3 row_style">          
                         <div class="card-block"  >';
                         
-                           echo '<a class="btn btn-warning float-right" href="update_ghor_info.php?id='.$value['h_id'].'">Edit</a>';
-                            echo '&nbsp';
-                              echo '<a class="btn btn-warning float-right" href="delete_ghor.php?id='.$value['h_id'].'" style = "background-color: red;">Delete</a>';
+                          //  echo '<a class="btn btn-warning float-right" href="update_ghor_info.php?id='.$value['h_id'].'">Edit</a>';
+                          //   echo '&nbsp';
+                          //     echo '<a class="btn btn-warning float-right" href="delete_ghor.php?id='.$value['h_id'].'" style = "background-color: red;">Delete</a>';
                            
                            echo   '<div class="row">
                             <div class="col-4"  >
@@ -95,7 +95,14 @@
                                // echo '<div class="alert alert-success" role="alert"><p><b>Vacant</b></p></div>';
                              // } 
                             echo '</div>
-                          </div>              
+                          </div>  
+                          
+                          
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="update_ghor_info.php?id='.$value['h_id'].'">Edit</a>
+                          
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="delete_ghor.php?id='.$value['h_id'].'" style = "background-color: red;">Delete</a>
+                          &nbsp
+
                          </div>
                       </div>';
                 }
