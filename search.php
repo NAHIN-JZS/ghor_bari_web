@@ -17,7 +17,19 @@
     if(isset($errMsg)){
       echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
     }
-    if(mysqli_num_rows($data) > 0){
+    if($location == 'no_city' or $h_type == 'no_type'){
+      if($location == 'no_city' and $h_type == 'no_type'){
+        echo "<h2 class='text-center'> Please select the location and type of estate </h2>";
+        
+      }
+      else if($h_type == 'no_type'){
+        echo "<h2 class='text-center'> Please select type of estate </h2>";
+      }
+      else{
+        echo "<h2 class='text-center'> Please select a location </h2>";
+      }
+    }
+    else if(mysqli_num_rows($data) > 0){
       echo "<h2 class='text-center'>List of ".$h_type." in ".$location."</h2>";
     }else{
       echo "<h2 class='text-center' style='color:red;'>Sorry no ".$h_type." is  available in ".$location."</h2>";
@@ -44,8 +56,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Search</h2>
-            <h3 class="section-subheading text-muted">Search rooms or homes for hire.</h3>
+          <?php  
+          if(!isset($_POST['search'])){
+            echo '<h2 class="section-heading text-uppercase">Search</h2> <h3 class="section-subheading text-muted">Search house, office or market place for hire.</h3>';
+            }
+            ?>
+            
           </div>
         </div>
         <div class="row">
@@ -58,8 +74,8 @@
                   <div class="form-group">
                     <!-- <input class="form-control" id="location" type="text" name="location" placeholder="Location" required data-validation-required-message="Please enter location."> -->
                     
-                    <select class = "form-control form-control-sm" id="location" name="location" size="1">
-                        <option value="---">Please select location for rent purposes</option>
+                    <select class = "form-control form-control-sm" id="location" name="location" size="1" required>
+                        <option value="no_city">Please select location for rent purposes</option>
                         <option value="Bagerhat">Bagerhat</option>
                         <option value="Bandarban">Bandarban</option>
                         <option value="Barguna">Barguna</option>
@@ -127,11 +143,11 @@
                         
                     </select>
                     <br>
-                    <select class = "form-control form-control-sm" id="h_type" name="h_type" size="1">
-                        <option value="---">Please select house type</option>
+                    <select class = "form-control form-control-sm" id="h_type" name="h_type" size="1" required>
+                        <option value="no_type">Please select house type</option>
                         <option value="house">House</option>
                         <option value="office">Office</option>
-                        <option value="market_place">market_place</option>
+                        <option value="market_place">Market place</option>
                     </select>
 
                     <p class="help-block text-danger"></p>
