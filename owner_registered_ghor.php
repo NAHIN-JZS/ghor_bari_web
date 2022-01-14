@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style\search.css">
+
 
 </head>
 
@@ -23,8 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Your Registered Room</h2>
-            <!-- <h3 class="section-subheading text-muted">Search rooms or homes for hire.</h3> -->
+            <h2 class="section-heading text-uppercase">Your Registered Estate</h2>
           </div>
         </div>
         <div class="row">
@@ -44,30 +45,29 @@
             echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
             }
                 foreach ($data as $key => $value) {           
-                  echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
-                        <div class="card-block" >';
+                  echo '<div class="card card-inverse card-info mb-3 row_style">          
+                        <div class="card-block"  >';
                         
                            echo '<a class="btn btn-warning float-right" href="update_ghor_info.php?id='.$value['h_id'].'">Edit</a>';
                             echo '&nbsp';
                               echo '<a class="btn btn-warning float-right" href="delete_ghor.php?id='.$value['h_id'].'" style = "background-color: red;">Delete</a>';
                            
                            echo   '<div class="row">
-                            <div class="col-4">
-                            <h4 class="text-center">Owner Details</h4>';
+                            <div class="col-4"  >
+                            <h4 class="showing_box text-center"  >Owner Details</h4>';
                               echo '<p><b>Owner Name: </b>'.$value['name'].'</p>';
                               echo '<p><b>Mobile Number: </b>'.$value['phone'].'</p>';
-                              //echo '<p><b>Alternate Number: </b>'.$value['alternat_mobile'].'</p>';
                               echo '<p><b>Email: </b>'.$value['email'].'</p>';
                               //echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
-                              if ($value['image'] !== 'uploads/') {
-                                # code...
-                                echo '<img src="images/houses/'.$value['image'].'" width="100">';
-                              }
+                              // if ($value['image'] !== 'uploads/') {
+                              //   # code...
+                              //   echo '<img src="images/houses/'.$value['image'].'" width="100">';
+                              // }
 
                           echo '</div>
-                            <div class="col-5">
-                            <h4 class="text-center">Room Details</h4>';
-                              // echo '<p><b>Country: </b>'.$value['country'].'<b> State: </b>'.$value['state'].'<b> City: </b>'.$value['city'].'</p>';
+                            <div class=" col-5">
+                            <h4 class="showing_box text-center">Estate Details</h4>';
+                              echo '<p><b>Estate Type: </b>'.$value['h_type'].'</p>';
                               echo '<p><b>House Number: </b>'.$value['house_no'].'</p>';
 
                               if(isset($value['cost'])){
@@ -83,9 +83,10 @@
                               echo '<p><b>Available Rooms: </b>'.$value['total_room'].'</p>';
                               echo '<p><b>Address: </b>'.$value['address'].'</p>';
                               echo '<p><b>City: </b>'.$value['city'].'</p>';
+                              echo '<p><b>Size: </b>';if($value['size'] == 0) {echo 'Not Measured';} else {echo $value['size'];} echo'</p>';
                           echo '</div>
-                            <div class="col-3">
-                            <h4>Other Details</h4>';
+                            <div class=" col-3">
+                            <h4 class = "showing_box text-center" >Other Details</h4>';
                             //echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
                             echo '<p><b>Description: </b>'.$value['additional_info'].'</p>';
                               //if($value['vacant'] == 0){ 

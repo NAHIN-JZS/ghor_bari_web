@@ -1,8 +1,21 @@
 .select_box{
 
-    padding-left: 70px; 
     padding-top: 7px; 
-    padding-right: 70px; 
     padding-bottom: 7px;
     border-radius: 5px;
+}
+
+.showing_box{
+    background-color:#B5F4EB;
+    margin: 5;
+    text-align: center;
+}
+
+.row_style{
+    margin: 0 auto;
+    background-color: #B5F4EB;
+    padding:2%;
+    
+    border-radius: 15px;
+
 }

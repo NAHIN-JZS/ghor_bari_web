@@ -28,7 +28,7 @@
 				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 			}
 		?>
-  		<h2 class="text-center">Register Room</h2>
+  		<h2 class="text-center">Register Your Estate</h2>
   		<form action="" enctype="multipart/form-data" method="post">
 		  	 <div class="row">
 		  	 	<div class="col-md-6">
@@ -40,15 +40,40 @@
 
 				<div class="col-md-6">
 				  <div class="form-group">
-				    <label for="total_room">Available Rooms</label>
+				    <label for="total_room">Total Rooms</label>
 				    <input type="text" class="form-control"  id="total_room" title="Available Rooms" placeholder="Available Rooms" name="total_room" required>
+				  </div>
+				 </div>
+			   </div>
+
+				 <div class="row">
+		  	 	<div class="col-md-6">
+				  <div class="form-group">
+				    <label for="address">Address</label>
+				    <input type="address" class="form-control" id="address" placeholder="address" name="address" required>
 				  </div>
 				 </div>
 
 				 <div class="col-md-6">
+				  <div class="form-group">
+				    <label for="rent_fare">Rent Fare</label>
+				    <input type="text" class="form-control" id="rent_fare" placeholder="Rent Fare" name="rent_fare" required>
+				  </div>
+				 </div>
+				 </div>
+
+				 <div class="row">
+				 <div class="col-md-4">
+				  <div class="form-group">
+				    <label for="size">Total Size (Square feet)</label>
+				    <input type="text" class="form-control" id="size" placeholder="size" name="size" required>
+				  </div>
+				 </div>
+
+				 <div class="col-md-4">
 			  <div class="form-group">
 			    <label for="city">City</label><br>
-			    <select class = "select_box" id="city" name="city" size="1">
+			    <select class = "select_box form-control form-control-sm" id="city" name="city" size="1">
 					<option value="---">Please select your city</option>
 					<option value="Bagerhat">Bagerhat</option>
 					<option value="Bandarban">Bandarban</option>
@@ -122,12 +147,12 @@
 			  </div>
 
 			  
-			  <div class="col-md-6">
+			  <div class="col-md-4">
 			  <div class="form-group">
 
 			  <label for="h_type">Estate Type</label><br>
-			<select class="select_box" id="h_type" name="h_type" size="1">
-				<option value="---">Please select house type---</option>
+			<select class="select_box form-control form-control-sm" id="h_type" name="h_type" size="1">
+				<option value="---">Please select house type </option>
 				<option value="house">House</option>
 				<option value="office">Office</option>
 				<option value="market_place">Market place</option>
@@ -137,20 +162,7 @@
 			  
 			 </div>
 
-			<div class="row">
-		  	 	<div class="col-md-6">
-				  <div class="form-group">
-				    <label for="address">Address</label>
-				    <input type="address" class="form-control" id="address" placeholder="address" name="address" required>
-				  </div>
-				 </div>
-
-				 <div class="col-md-6">
-				  <div class="form-group">
-				    <label for="rent_fare">Rent Fare</label>
-				    <input type="text" class="form-control" id="rent_fare" placeholder="Rent Fare" name="rent_fare" required>
-				  </div>
-				 </div>
+			
 
 				<div class="col-md-6">
 			  <div class="form-group">
