@@ -9,6 +9,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style\search.css">
+
 </head>
 
 
@@ -18,7 +21,7 @@
 
   ?>
   <!-- Carousel -->
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div id="demo" class="carousel slide " data-bs-ride="carousel">
 
 
     <!-- Indicators/dots -->
@@ -30,22 +33,22 @@
 
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active carousel_image">
 
-        <img src="images/home_page/home-1.jpg" alt="House" class="d-block" style="width:100% ">
+        <img src="images/home_page/home-1.jpg" alt="House" class="d-block " style="width:100% ">
         <div class="carousel-caption">
           <h3>House</h3>
           <p>Find the best place for living!</p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item carousel_image">
         <img src="images\home_page\home-2.jpg" alt="Office" class="d-block" style="width:100%">
         <div class="carousel-caption">
           <h3>Office</h3>
           <p>Better workplace for better performance!</p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item carousel_image">
         <img src="images\home_page\home-3.jpg" alt="Market Place" class="d-block" style="width:100%">
         <div class="carousel-caption">
           <h3>Market Place</h3>
