@@ -1,4 +1,4 @@
 <?php
-setcookie("compair_values", "", time() + (86400 * 30), "/" );
+setcookie("compair_values", "", time() - 3600, "/" );
 header("Location: compair.php" );
 ?>

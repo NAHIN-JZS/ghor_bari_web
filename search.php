@@ -5,10 +5,21 @@ require 'con2database.php';
 
 $data = [];
 
-if (isset($_POST['search'])) {
-  // Get data from FORM
+if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
+
+  if (isset($_POST['search'])){
+     // Get data from FORM
   $location = $_POST['location'];
   $h_type = $_POST['h_type'];
+  }
+ else{
+   $location = $_COOKIE['loc'];
+   $h_type = $_COOKIE['h_type'];
+ }
+
+
+
+
   $sql_search_ghor = "SELECT * from `house` INNER JOIN `user` ON `house`.`u_id` = `user`.`id` WHERE `house`.`city` = '$location' AND `house`.`h_type` = '$h_type'; ";
   $data = mysqli_query($connect, $sql_search_ghor);
 
@@ -51,7 +62,7 @@ if (isset($_POST['search'])) {
       <div class="row">
         <div class="col-lg-12 text-center">
           <?php
-          if (!isset($_POST['search'])) {
+          if (!isset($_POST['search']) and !isset($_COOKIE['loc'])) {
             echo '<h2 class="section-heading text-uppercase">Search</h2> <h3 class="section-subheading text-muted">Search house, office or market place for hire.</h3>';
           }
           ?>
@@ -186,13 +197,13 @@ if (isset($_POST['search'])) {
             //echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
             echo '<p><b>Description: </b>' . $value['additional_info'] . '</p>';
 
-            
+
 
             echo '</div>
            
                         
                           </div>
-                          <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='. $value['h_id'].'">Add to Compair</a>
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='.$value['h_id'] .'&amp; loc='.$value["city"] .'&amp;h_typ='.$value['h_type'] .'">Add to Compair</a>
                           
                           <a class=" button_edit_and_update btn btn-warning float-right" href="compair.php">Compair Now</a>
 
