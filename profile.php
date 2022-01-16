@@ -51,10 +51,10 @@ foreach ($result as $row)
   //{
 
 
-  echo '<div class="card">';
-  //echo '<img src="images/avatar.png" alt="John" style="height:200px; width: 100%">';
-  echo '<h3>' . $_SESSION['u_name'] . '</h3>';
-  echo '<p class="title">' . $_SESSION['u_email'] . '</p>';
+  //echo '<div class="card">';
+  //echo '<div style = "text-align: center";>';
+  echo '<p><b> Name:</b> ' . $_SESSION['u_name'] . '</p>';
+  echo '<p ><b>Email:</b> ' . $_SESSION['u_email'] . '</p>';
   echo '<p><b>Phone No.: </b>' . $_SESSION['u_phone'] . '</p>';
   echo '<p><b>Address: </b>' . $_SESSION['u_address'] . '</p>';
   //echo '<p><b>ID: </b>'.$_SESSION['u_id'].'</p>';
@@ -63,7 +63,7 @@ foreach ($result as $row)
   //}
   ?>
 
-</div>
+<!-- </div> -->
 <!-- side-nav -->
 <br>
 <center>
