@@ -2,4 +2,5 @@
          
                alert ("We will use cookies!");
                
-      </script>  
+      </script>
+  

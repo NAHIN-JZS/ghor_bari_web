@@ -20,9 +20,12 @@
 
   <?php
 
-  include("cookies_alart.js");
+  
   include("nevigation.php");
 
+  if (empty($_SESSION['u_name']))
+  include("cookies_alart.js");
+  
   ?>
   <!-- Carousel -->
   <div id="demo" class="carousel slide " data-bs-ride="carousel">

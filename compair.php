@@ -68,6 +68,9 @@ function to_fetch($com_id){
 
 <?php
 
+if (empty($_SESSION['u_name']))
+    header('Location: index.php');
+
     if(isset($_COOKIE["compair_values"])){
 
         
