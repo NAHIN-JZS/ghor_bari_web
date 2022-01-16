@@ -5,6 +5,18 @@ require 'con2database.php';
 
 $data = [];
 
+function is_added_in_compare($h_id){
+  if (isset($_COOKIE["compair_values"])){
+  $added_id = json_decode($_COOKIE["compair_values"],true);
+  
+
+  return in_array($h_id,$added_id);
+  }
+
+  return false;
+
+}
+
 if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
 
   if (isset($_POST['search'])){
@@ -202,10 +214,19 @@ if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
             echo '</div>
            
                         
-                          </div>
-                          <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='.$value['h_id'] .'&amp; loc='.$value["city"] .'&amp;h_typ='.$value['h_type'] .'">Add to Compair</a>
+                          </div>';
+                          if(! is_added_in_compare($value['h_id']))
+                          {
+                            echo '<a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='.$value['h_id'] .'&amp; loc='.$value["city"] .'&amp;h_typ='.$value['h_type'] .'">Add to Compair</a>';
                           
-                          <a class=" button_edit_and_update btn btn-warning float-right" href="compair.php" " style = "background-color: #008000;" >Compair Now</a>
+                          }
+                          
+                          else{
+                            echo '<a class=" button_edit_and_update btn btn-warning float-right" >Added</a>';
+                          
+
+                          }
+                          echo '<a class=" button_edit_and_update btn btn-warning float-right" href="compair.php" " style = "background-color: #008000;" >Compair Now</a>
 
                          </div>
                       </div>';

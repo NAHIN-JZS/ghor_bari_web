@@ -16,7 +16,11 @@
         
     }
     
-    array_push($compair, $house_id);
+    if(! in_array($house_id,$compair)){
+        array_push($compair, $house_id);
+    }
+
+    
     setcookie("compair_values", json_encode($compair), time() + (86400 * 30), "/" );   
 
     setcookie("loc", $location, time() + 300, "/" ); 
