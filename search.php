@@ -205,7 +205,7 @@ if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
                           </div>
                           <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='.$value['h_id'] .'&amp; loc='.$value["city"] .'&amp;h_typ='.$value['h_type'] .'">Add to Compair</a>
                           
-                          <a class=" button_edit_and_update btn btn-warning float-right" href="compair.php">Compair Now</a>
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="compair.php" " style = "background-color: #008000;" >Compair Now</a>
 
                          </div>
                       </div>';

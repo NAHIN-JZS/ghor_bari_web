@@ -26,7 +26,7 @@ function to_fetch($com_id){
                         <p class="text-center">'.$value["cost"].'</p>
                         </div>
                 
-                        <div class="col-2">
+                        <div class="col-1">
                         <p class="text-center">'.$value["total_room"].'</p>
                         </div>
                 
@@ -37,7 +37,10 @@ function to_fetch($com_id){
                         <div class="col-2">
                         <p class="text-center text-uppercase">'.$value["city"].'</p>
                         </div>
-           
+
+                        <div class="col-1">
+                        <a class=" button_edit_and_update btn btn-warning float-right" href="view_estate.php?vh_id=' . $value['h_id'] . '">Details</a>
+                        </div>
                         
                           </div>
                          </div>
@@ -84,7 +87,7 @@ function to_fetch($com_id){
             <h5 class="text-center text-uppercase">Rent Fare</h5>
             </div>
 
-            <div class="col-2">
+            <div class="col-1">
             <h5 class="text-center text-uppercase">Available Rooms</h5>
             </div>
 
@@ -95,6 +98,7 @@ function to_fetch($com_id){
             <div class="col-2">
             <h5 class="text-center text-uppercase">City</h5>
             </div>
+
             
         </div>
         </div>';
@@ -107,14 +111,19 @@ function to_fetch($com_id){
             to_fetch($id);
         }
     
-        echo '<a class=" button_edit_and_update btn btn-warning float-right" href="clear_all_compair.php">Clear All</a>';
+        echo '<div >
+        <a class=" button_edit_and_update btn btn-warning float-right" href="search.php" >Continue Search</a>
+        
+        <a class=" button_edit_and_update btn btn-warning float-right" href="clear_all_compair.php" " style = "background-color: 	#FF00FF;">Clear All</a>
+        </div>';
+        
     
     }
     else{
 
         echo '<h3 class = "text-center" > Please go to search page to add in compair </h3><br>';
         echo '<div  style="text-align: center"; >
-        <a class=" btn btn-warning"  href="search.php" >Go to Search Page</a>
+        <a class=" btn btn-warning"  href="search.php"  >Go to Search Page</a>
         </div>';
         // echo '<a class=" btn btn-warning" style="text-align: center"; href="search.php" >Go to Search</a>';
     
