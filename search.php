@@ -193,6 +193,8 @@ if (isset($_POST['search'])) {
                         
                           </div>
                           <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='. $value['h_id'].'">Add to Compair</a>
+                          
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="compair.php">Compair Now</a>
 
                          </div>
                       </div>';

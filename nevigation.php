@@ -37,6 +37,12 @@
           // echo '<li class="nav-item">';
           echo '<a class="nav-link " href="http://localhost/project-ghor-bari/search.php">Search</a>';
           // echo '</li>';
+
+        //<!-- Compair -->
+          // echo '<li class="nav-item">';
+          echo '<a class="nav-link " href="http://localhost/project-ghor-bari/compair.php">Compair</a>';
+          // echo '</li>';
+
         }
       else{
         //<!-- LogIn  -->

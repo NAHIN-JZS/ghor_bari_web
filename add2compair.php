@@ -15,12 +15,12 @@
     }
     
     array_push($compair, $house_id);
-    setcookie("compair_values", json_encode($compair), time() + (86400 * 30), "/" );
+    setcookie("compair_values", json_encode($compair), time() + (86400 * 30), "/" );   
 
-        
+    //echo $compair[0];
 
-    echo $_COOKIE["compair_values"];
-		//header("Location: search.php" );
+    //echo $test;
+	header("Location: search.php" );
 		
 
 ?>
