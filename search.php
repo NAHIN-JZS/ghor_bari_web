@@ -66,7 +66,6 @@ if (isset($_POST['search'])) {
 
               <div class="col-md-10">
                 <div class="form-group">
-                  <!-- <input class="form-control" id="location" type="text" name="location" placeholder="Location" required data-validation-required-message="Please enter location."> -->
 
                   <select class="form-control form-control-sm" id="location" name="location" size="1" required>
                     <option value="no_city">Please select location for rent purposes</option>
@@ -160,34 +159,23 @@ if (isset($_POST['search'])) {
           foreach ($data as $key => $value) {
             echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
                         <div class="card-block">';
-            // echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
             echo   '<div class="row row_style">
                             <div class="col-4">
                             <h4 class="text-center text-uppercase">Owner Details</h4>';
             echo '<p><b>Owner Name: </b>' . $value['name'] . '</p>';
             echo '<p><b>Mobile Number: </b>' . $value['phone'] . '</p>';
             echo '<p><b>Email: </b>' . $value['email'] . '</p>';
-            //echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
-            //if ($value['image'] !== 'uploads/') {
-            # code...
-            //  echo '<img src="images/houses/'.$value['image'].'" width="100">';
-            //}
+
 
             echo '</div>
                             <div class="col-5">
                             <h4 class="text-center text-uppercase">' . $value['h_type'] . ' Details</h4>';
-            // echo '<p><b>Country: </b>'.$value['country'].'<b> State: </b>'.$value['state'].'<b> City: </b>'.$value['city'].'</p>';
             echo '<p><b>House Number: </b>' . $value['house_no'] . '</p>';
 
             if (isset($value['cost'])) {
               echo '<p><b>Rent Fare: </b>' . $value['cost'] . '</p>';
             }
 
-            //if(isset($value['apartment_name']))                         
-            //echo '<div class="alert alert-success" role="alert"><p><b>Apartment Name: </b>'.$value['apartment_name'].'</p></div>';
-
-            //if(isset($value['ap_number_of_plats']))
-            //echo '<div class="alert alert-success" role="alert"><p><b>Plat Number: </b>'.$value['ap_number_of_plats'].'</p></div>';
 
             echo '<p><b>Available Rooms: </b>' . $value['total_room'] . '</p>';
             echo '<p><b>Size: </b>' . $value['size'] . '</p>';
@@ -197,13 +185,15 @@ if (isset($_POST['search'])) {
                             <h4 class="text-center text-uppercase">Other Details</h4>';
             //echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
             echo '<p><b>Description: </b>' . $value['additional_info'] . '</p>';
-            //if($value['vacant'] == 0){ 
-            //echo '<div class="alert alert-danger" role="alert"><p><b>Occupied</b></p></div>';
-            //}else{
-            // echo '<div class="alert alert-success" role="alert"><p><b>Vacant</b></p></div>';
-            // } 
+
+            
+
             echo '</div>
-                          </div>              
+           
+                        
+                          </div>
+                          <a class=" button_edit_and_update btn btn-warning float-right" href="add2compair.php?id='. $value['h_id'].'">Add to Compair</a>
+
                          </div>
                       </div>';
           }
