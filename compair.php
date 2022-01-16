@@ -103,7 +103,7 @@ if (empty($_SESSION['u_name']))
             </div>
 
             <div class="col-1">
-            <h5 class="text-center text-uppercase">Esate Type</h5>
+            <h5 class="text-center text-uppercase">Estate Type</h5>
             </div>
 
             <div class="col-2">
