@@ -16,7 +16,11 @@
 
 
 <body>
+
+
   <?php
+
+  include("cookies_alart.js");
   include("nevigation.php");
 
   ?>
