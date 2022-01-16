@@ -14,7 +14,7 @@ function to_fetch($com_id){
         echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
                         <div class="card-block">';
             echo   '<div class="row row_style">
-                        <div class="col-2">
+                        <div class="col-1">
                         <p class="text-center">'.$value["h_id"].'</p>
                         </div>
                 
@@ -32,6 +32,10 @@ function to_fetch($com_id){
                 
                         <div class="col-2">
                         <p class="text-center">'.$value["size"].'</p>
+                        </div>
+
+                        <div class="col-1">
+                        <p class="text-center text-uppercase ">'.$value["h_type"].'</p>
                         </div>
                 
                         <div class="col-2">
@@ -78,7 +82,7 @@ if (empty($_SESSION['u_name']))
         <div class="card-block">
         <div class="row row_style">
 
-            <div class="col-2">
+            <div class="col-1">
             <h5 class="text-center text-uppercase">House No</h5>
             </div>
 
@@ -91,11 +95,15 @@ if (empty($_SESSION['u_name']))
             </div>
 
             <div class="col-1">
-            <h5 class="text-center text-uppercase">Available Rooms</h5>
+            <h6 class="text-center text-uppercase">Available Rooms</h6>
             </div>
 
             <div class="col-2">
             <h5 class="text-center text-uppercase">Size</h5>
+            </div>
+
+            <div class="col-1">
+            <h5 class="text-center text-uppercase">Esate Type</h5>
             </div>
 
             <div class="col-2">

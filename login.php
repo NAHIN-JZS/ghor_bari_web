@@ -31,7 +31,8 @@
 		
 
 		if (mysqli_num_rows($result) > 0) {
-			while($row = mysqli_fetch_assoc($result)) {
+			// while($row = mysqli_fetch_assoc($result)) {
+				foreach ($result as $key => $row) {
 				if($row['password'] == $password){
 					$_SESSION['u_id'] = $row['id'];
 					$_SESSION['u_name'] = $row['name'];
@@ -90,9 +91,9 @@
 						</div>
 						<input type="password" class="form-control" placeholder="password" name='password'>
 					</div>
-					<div class="row align-items-center remember">
+					<!-- <div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
-					</div>
+					</div> -->
 					<div class="form-group">
 						<input type="submit" value="Login" name="login" class="btn float-right login_btn">
 					</div>
