@@ -61,7 +61,7 @@ if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Search</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style\search.css">
 </head>
@@ -74,6 +74,10 @@ if (isset($_POST['search']) or isset($_COOKIE['loc'])) {
       <div class="row">
         <div class="col-lg-12 text-center">
           <?php
+
+          if (empty($_SESSION['u_name']))
+          header('Location: index.php');
+
           if (!isset($_POST['search']) and !isset($_COOKIE['loc'])) {
             echo '<h2 class="section-heading text-uppercase">Search</h2> <h3 class="section-subheading text-muted">Search house, office or market place for hire.</h3>';
           }
