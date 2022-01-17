@@ -201,23 +201,12 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="additional_info">Additional Information</label><br>
-						<!-- <input type="textarea" class="form-control" id="additional_info" placeholder="Additional Information" name="additional_info" required> -->
 						<textarea rows="5" cols="60" id="additional_info" name="additional_info" required placeholder="Enter additional information about your estate"></textarea><br>
 					</div>
 				</div>
 		</div>
 
-		<!-- <div class="row">
-			   	
-				<div class="col-md-4">
-			  <div class="form-group">
-			    <label for="image">Image</label>
-			    <input type="file" name="image" id="image">
-				
-
-			  </div>
-			  </div>
-			  </div> -->
+		
 		<div>
 			<button type="submit" class="btn btn-primary" id="register_new_ghor" name='register_new_ghor' value="register_new_ghor">Submit</button>
 		</div>

@@ -56,7 +56,6 @@ $data = [];
             echo '</div>
                             <div class="col-3">
                             <h4 class="text-center text-uppercase">Other Details</h4>';
-            //echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
             echo '<p><b>Description: </b>' . $value['additional_info'] . '</p>';
 
 
