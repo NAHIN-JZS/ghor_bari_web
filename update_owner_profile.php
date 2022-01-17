@@ -7,13 +7,10 @@
     <title>Update Profile</title>
 
     
-	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="style\logIn\login.css">
 
 </head>
@@ -38,7 +35,7 @@ $address = $_POST['address'];
 
 $sql_update_user = "UPDATE `user` SET `name`= '$name', `phone`='$phone_number',`permanent_address`='$address', `email`='$email', `password`='$password' WHERE `user`.`id` = '$uid';";
 
-//$connect->query($sql_enter_new_user);
+
 
 if (mysqli_query($connect, $sql_update_user)) {
 	
